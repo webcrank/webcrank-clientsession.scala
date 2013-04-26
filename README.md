@@ -106,3 +106,25 @@ Why would you _not_ use a session store?
    by just changing your key, but if you want to pick on a single
    session you are back to having a data store to track that and you
    are (prossibly) better off just storing everything.
+
+
+Future
+------
+
+Things that are planned:
+
+ - Switch to ByteString implementation and remove Array[Byte]
+ - Add simple key/value support.
+ - Add scalaz.effect.IO to track some of the uglies.
+ - Add support for a file backed implementation.
+
+
+Contributing
+------------
+
+Any contributions welcome, in particular any security reviews on this
+library, its recommendations or the underlying crypto libraries would
+be very helpful.
+
+The [issue tracker](https://github.com/webcrank/webcrank-clientsession.scala/issues)
+is up to date with anything that is planned / desired.
