@@ -7,4 +7,4 @@ abstract class Spec
   extends Specification
   with ScalaCheck
   with ClientSessionArbitraries
-  with ClientSessionProperties
+  with UnicodeArbitraries
