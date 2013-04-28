@@ -5,7 +5,6 @@ scalaVersion := "2.10.1"
 crossScalaVersions := Seq("2.9.2", "2.9.3", "2.10.1")
 
 libraryDependencies ++= Seq(
-  "io.argonaut" %% "argonaut" % "6.0-M5",
   "org.scalaz" %% "scalaz-core" % "7.0.0",
   "com.owtelse.codec" % "base64" % "1.0.4",
   "org.scalaz" %% "scalaz-scalacheck-binding" % "7.0.0" % "test",
