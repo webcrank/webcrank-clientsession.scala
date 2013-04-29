@@ -37,7 +37,7 @@ case class ClientSession(rng: SecureRandom, key: ClientSessionKey) {
   val PrngAlgorithm = "SHA1PRNG"
 
   def secure[A](plaintext: String): String = {
-    val encoded = Base64._encode(plaintext.getBytes("UTF-8"))
+    val encoded = Base64.encode(plaintext)
     val iv = Iv.generate(rng, IvSize)
     val encrypted = Encryption.encrypt(key, iv, encoded, rng)
     val unauthenticated = iv ++ encrypted
@@ -56,7 +56,7 @@ case class ClientSession(rng: SecureRandom, key: ClientSessionKey) {
       else {
         val (iv, encrypted) = unauthenticated.splitAt(IvSize)
         val decrypted = Encryption.decrypt(key, iv, encrypted, rng)
-        new String(Base64._decode(decrypted), "UTF-8").right
+        Base64.decode(decrypted).right
       }
     }
   }
